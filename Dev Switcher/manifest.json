@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Dev Switcher",
+  "version": "1.0",
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+"host_permissions": [
+  "https://dev17.mostbet.com/*",
+  "https://mostbet.com/*",
+  "https://ntcdl0i.com/*"
+]
+}

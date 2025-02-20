@@ -1,4 +1,3 @@
-
 document.getElementById('createCookieBtn').addEventListener('click', function() {
   const selectedValue = document.getElementById('cookieSelect').value;
   chrome.runtime.sendMessage({ action: "setCookie", value: selectedValue }, function() {
@@ -15,11 +14,9 @@ document.getElementById('createPwEnabledCookieBtn').addEventListener('click', fu
   chrome.runtime.sendMessage({ action: "setPwEnabledCookie" }, updateStatus);
 });
 
-
 function saveSelectedValue(value) {
   chrome.storage.local.set({ selectedDev: value });
 }
-
 
 function restoreSelectedValue() {
   chrome.storage.local.get('selectedDev', function(result) {
@@ -28,12 +25,10 @@ function restoreSelectedValue() {
   });
 }
 
-
 function updateStatus() {
   const devUrl = "https://dev17.mostbet.com";
   const prodUrl = "https://mostbet.com";
 
-  
   chrome.cookies.get({ url: devUrl, name: "PW_DEV" }, function(cookie) {
     const devStatusElement = document.getElementById('devStatus');
     if (cookie) {
@@ -43,7 +38,6 @@ function updateStatus() {
     }
   });
 
- 
   chrome.cookies.get({ url: prodUrl, name: "pw_enabled" }, function(cookie) {
     const prodStatusElement = document.getElementById('prodStatus');
     if (cookie) {
@@ -57,7 +51,6 @@ function updateStatus() {
     }
   });
 }
-
 
 document.addEventListener('DOMContentLoaded', function() {
   restoreSelectedValue(); 
