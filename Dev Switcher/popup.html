@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dev Switcher</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h3>Dev Switcher</h3>
+  <label for="cookieSelect">Выберите нужный dev:</label>
+  <select id="cookieSelect">
+    <option value="dev-1">Dev1</option>
+    <option value="dev-2">Dev2</option>
+    <option value="dev-3">Dev3</option>
+  </select>
+  <br>
+  <button id="createCookieBtn">Создать Куки</button>
+  <br>
+  <button id="deleteCookieBtn">Dev</button>
+  <br>
+  <button id="createPwEnabledCookieBtn">pw_enabled для прода</button>
+  
+  <div id="statusContainer">
+    <p id="devStatus">Текущий dev: - Not set</p>
+    <p id="prodStatus">pw_enabled - OFF</p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
